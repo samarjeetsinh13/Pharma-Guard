@@ -1,0 +1,27 @@
+# =====================================================================
+# PHARMA GUARD - ILLNESS TABLE  (hand-built demo database)
+# =====================================================================
+# Format (one illness per line, columns separated by the | character):
+#   id | name | category | short description | aliases (comma separated)
+#
+# The Medicine Suitability module accepts exactly ONE illness. The user may
+# type the name or any alias; matching ignores upper/lower case.
+#
+# EDUCATIONAL DEMO DATA ONLY - NOT MEDICAL ADVICE.
+# =====================================================================
+I001|Fever|General|Raised body temperature, often caused by infection|High temperature, Pyrexia
+I002|Headache|Neurological|Tension-type or mild everyday headache|Tension headache, Head pain
+I003|Common Cold|Respiratory|Viral infection of the nose and throat|Cold, Runny nose
+I004|Bacterial Throat Infection|Infection|Streptococcal pharyngitis or tonsillitis|Strep throat, Tonsillitis, Pharyngitis
+I005|Urinary Tract Infection|Infection|Bacterial infection of the urinary tract|UTI, Bladder infection
+I006|Type 2 Diabetes|Endocrine|Long-term high blood sugar caused by insulin resistance|Diabetes, T2DM, High blood sugar
+I007|Hypertension|Cardiovascular|Persistently high blood pressure|High blood pressure, HTN
+I008|High Cholesterol|Cardiovascular|Raised blood fat (lipid) levels|Hyperlipidemia, Dyslipidemia
+I009|Coronary Artery Disease|Cardiovascular|Narrowed heart arteries; long-term prevention of heart attack|CAD, Heart disease
+I010|Atrial Fibrillation|Cardiovascular|Irregular heart rhythm that raises stroke risk|AFib, AF
+I011|Asthma|Respiratory|Long-term airway inflammation causing wheeze and breathlessness|Bronchial asthma
+I012|Acid Reflux|Digestive|Stomach acid flowing back into the food pipe (GERD)|GERD, Heartburn, Acidity
+I013|Allergic Rhinitis|Allergy|Sneezing and runny nose caused by allergens|Hay fever, Nasal allergy
+I014|Hypothyroidism|Endocrine|Underactive thyroid gland|Low thyroid, Underactive thyroid
+I015|Osteoarthritis|Musculoskeletal|Wear-and-tear joint pain|Joint pain, Arthritis
+I016|Depression|Mental health|Persistent low mood and loss of interest|Low mood, Major depression

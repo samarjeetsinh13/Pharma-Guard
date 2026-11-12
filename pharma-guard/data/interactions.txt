@@ -1,0 +1,68 @@
+# =====================================================================
+# PHARMA GUARD - INTERACTION TABLE  (hand-built demo database)
+# =====================================================================
+# Format (one pair per line, columns separated by the | character):
+#   medicine A | medicine B | severity | what happens | advice
+#
+# severity must be exactly one of:  MINOR, MODERATE, MAJOR
+# The order of A and B does not matter - the program checks both orders.
+# A pair that is not listed is reported as "no known interaction in the
+# demo database" (this does NOT prove the pair is safe).
+#
+# EDUCATIONAL DEMO DATA ONLY - NOT MEDICAL ADVICE.
+# =====================================================================
+
+# ---- Warfarin (blood thinner) ----
+Warfarin|Aspirin|MAJOR|Both thin the blood, so the chance of serious bleeding goes up.|Do not combine unless a doctor prescribes it and monitors you.
+Warfarin|Ibuprofen|MAJOR|NSAIDs can cause stomach bleeding and strengthen warfarin's effect.|Avoid; ask a doctor about a safer pain reliever.
+Warfarin|Diclofenac|MAJOR|NSAIDs can cause stomach bleeding and strengthen warfarin's effect.|Avoid; ask a doctor about a safer pain reliever.
+Warfarin|Clopidogrel|MAJOR|Two blood-thinning mechanisms together raise bleeding risk.|Only together under specialist supervision.
+Warfarin|Ciprofloxacin|MODERATE|The antibiotic can raise the INR (blood-thinning level).|Get the INR checked during and after the antibiotic course.
+Warfarin|Azithromycin|MODERATE|May raise the INR and the chance of bleeding.|Monitor INR more often during the antibiotic course.
+Warfarin|Amoxicillin|MODERATE|May slightly raise the INR.|Monitor INR if the antibiotic course is long.
+Warfarin|Paracetamol|MODERATE|Regular high doses of paracetamol can raise the INR.|Keep paracetamol doses low and tell your doctor.
+Warfarin|Sertraline|MODERATE|SSRIs can increase bleeding risk.|Report unusual bruising or bleeding.
+Warfarin|Levothyroxine|MODERATE|Thyroid hormone changes how strongly warfarin works.|INR may need re-checking when the thyroid dose changes.
+Warfarin|Atorvastatin|MINOR|May cause a small change in INR.|Routine INR monitoring is enough.
+
+# ---- NSAIDs (Ibuprofen, Diclofenac, Aspirin) ----
+Ibuprofen|Diclofenac|MAJOR|Two NSAIDs together double up side effects (stomach bleeding, kidney strain).|Never take two NSAIDs together.
+Aspirin|Diclofenac|MODERATE|Raises the chance of stomach ulcers and bleeding.|Avoid unless a doctor advises it.
+Aspirin|Ibuprofen|MODERATE|Ibuprofen can block aspirin's heart-protecting effect and adds stomach risk.|Ask a doctor how to time them if both are needed.
+Aspirin|Clopidogrel|MODERATE|Additive bleeding risk (sometimes used together on purpose).|Use together only when prescribed.
+Aspirin|Glimepiride|MODERATE|Aspirin can strengthen the sugar-lowering effect.|Watch for low blood sugar.
+Ibuprofen|Losartan|MODERATE|NSAIDs weaken the blood pressure effect and can strain the kidneys.|Avoid regular use; check kidney function.
+Ibuprofen|Enalapril|MODERATE|NSAIDs weaken the blood pressure effect and can strain the kidneys.|Avoid regular use; check kidney function.
+Ibuprofen|Atenolol|MODERATE|NSAIDs can weaken the blood pressure lowering effect.|Monitor blood pressure.
+Ibuprofen|Furosemide|MODERATE|NSAIDs reduce the water-tablet effect and can strain the kidneys.|Avoid regular use together.
+Diclofenac|Losartan|MODERATE|NSAIDs weaken the blood pressure effect and can strain the kidneys.|Avoid regular use; check kidney function.
+Diclofenac|Furosemide|MODERATE|NSAIDs reduce the water-tablet effect and can strain the kidneys.|Avoid regular use together.
+
+# ---- Blood pressure and heart medicines ----
+Losartan|Enalapril|MAJOR|Two drugs acting on the same system can cause high potassium and kidney injury.|Do not combine without specialist advice.
+Atenolol|Salbutamol|MAJOR|The beta blocker blocks the inhaler and can trigger breathing difficulty.|Avoid in asthma; ask a doctor for an alternative.
+Atenolol|Amlodipine|MINOR|Often prescribed together; combined effect can lower blood pressure a lot.|Monitor blood pressure and dizziness.
+Atorvastatin|Amlodipine|MINOR|Small rise in statin level.|Usually no change needed.
+Furosemide|Enalapril|MODERATE|Blood pressure can drop sharply when starting the combination.|Start with a low dose and check kidney function.
+Clopidogrel|Omeprazole|MAJOR|Omeprazole can reduce clopidogrel's clot-preventing effect.|Prefer pantoprazole if acid protection is needed.
+
+# ---- Diabetes medicines ----
+Metformin|Ciprofloxacin|MODERATE|The antibiotic can cause unstable (high or low) blood sugar.|Check blood sugar more often during the course.
+Glimepiride|Ciprofloxacin|MODERATE|Can cause low blood sugar.|Check blood sugar more often during the course.
+Metformin|Prednisolone|MODERATE|Steroids raise blood sugar and reduce metformin's benefit.|Monitor blood sugar closely.
+Glimepiride|Prednisolone|MODERATE|Steroids raise blood sugar and reduce the medicine's benefit.|Monitor blood sugar closely.
+
+# ---- Antidepressant / pain ----
+Sertraline|Tramadol|MAJOR|Risk of serotonin syndrome (agitation, fast heartbeat, fever) and seizures.|Avoid; ask a doctor about alternatives.
+Sertraline|Aspirin|MODERATE|SSRIs plus aspirin raise the chance of bleeding.|Report unusual bruising or black stools.
+Sertraline|Ibuprofen|MODERATE|SSRIs plus NSAIDs raise the chance of stomach bleeding.|Use a stomach protector or an alternative.
+Tramadol|Paracetamol|MINOR|Commonly combined on purpose for stronger pain relief.|Do not exceed the paracetamol daily limit.
+Tramadol|Cetirizine|MINOR|Both can cause drowsiness.|Avoid driving until you know how you react.
+
+# ---- Steroids, antibiotics and others ----
+Prednisolone|Ibuprofen|MODERATE|Steroid plus NSAID raises the risk of stomach ulcers and bleeding.|Use a stomach protector if both are needed.
+Prednisolone|Aspirin|MODERATE|Steroid plus aspirin raises the risk of stomach ulcers and bleeding.|Use a stomach protector if both are needed.
+Prednisolone|Furosemide|MODERATE|Both can lower blood potassium.|Check potassium levels.
+Ciprofloxacin|Prednisolone|MODERATE|Raises the risk of tendon inflammation or rupture.|Stop and call a doctor if a tendon becomes painful.
+Levothyroxine|Omeprazole|MODERATE|Less acid can reduce absorption of levothyroxine.|Thyroid blood tests may be needed to adjust the dose.
+Atorvastatin|Azithromycin|MINOR|Slight chance of higher statin levels and muscle aches.|Report unexplained muscle pain.

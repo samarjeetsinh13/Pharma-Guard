@@ -1,0 +1,50 @@
+# =====================================================================
+# PHARMA GUARD - COUNTERFEIT REGISTRY  (hand-built demo database)
+# =====================================================================
+# Format (one batch per line, columns separated by the | character):
+#   medicine name | batch number | manufacturer | manufacture date | expiry date | status
+#
+# Dates use the ISO format YYYY-MM-DD.
+# status must be exactly one of:  GENUINE, RECALLED
+#
+# How the Counterfeit Detection module uses this table:
+#   1. It looks up the batch number the user typed (spaces, dashes and
+#      upper/lower case are ignored).
+#   2. If the batch is not here  -> NOT_FOUND  (cannot be verified).
+#   3. If found, it compares medicine name and manufacturer with the record.
+#      Any mismatch -> MISMATCH (possible counterfeit).
+#   4. If everything matches, status RECALLED -> RECALLED, a past expiry date
+#      -> EXPIRED, otherwise VERIFIED.
+#
+# ALL MANUFACTURERS AND BATCH NUMBERS BELOW ARE FICTIONAL DEMO DATA.
+# They are not real companies. NOT A REAL VERIFICATION SERVICE.
+# =====================================================================
+Paracetamol|PCM-2501-A12|Sunrise Pharma Pvt Ltd|2025-01-15|2027-12-31|GENUINE
+Paracetamol|PCM-2309-B07|Sunrise Pharma Pvt Ltd|2023-09-10|2025-08-31|GENUINE
+Ibuprofen|IBU-2503-C21|Medora Laboratories|2025-03-05|2027-02-28|GENUINE
+Aspirin|ASP-2502-D04|Helio Healthcare Ltd|2025-02-12|2027-01-31|GENUINE
+Amoxicillin|AMX-2504-E18|Vedant Remedies|2025-04-20|2027-03-31|GENUINE
+Amoxicillin|AMX-2506-E33|Vedant Remedies|2025-06-18|2027-05-31|RECALLED
+Azithromycin|AZI-2505-F09|Kalpa Life Sciences|2025-05-09|2027-04-30|GENUINE
+Ciprofloxacin|CIP-2501-G14|Norfield Pharmaceuticals|2025-01-27|2027-01-31|GENUINE
+Metformin|MET-2506-H31|Zenith BioCare|2025-06-01|2028-05-31|GENUINE
+Glimepiride|GLM-2507-J05|Zenith BioCare|2025-07-14|2028-06-30|GENUINE
+Amlodipine|AML-2508-K22|Helio Healthcare Ltd|2025-08-08|2028-07-31|GENUINE
+Atenolol|ATN-2502-L11|Medora Laboratories|2025-02-21|2027-12-31|GENUINE
+Losartan|LOS-2509-M27|Kalpa Life Sciences|2025-09-03|2028-08-31|GENUINE
+Enalapril|ENA-2503-N16|Norfield Pharmaceuticals|2025-03-17|2027-09-30|GENUINE
+Atorvastatin|ATV-2510-P08|Sunrise Pharma Pvt Ltd|2025-10-06|2028-09-30|GENUINE
+Warfarin|WAR-2504-Q03|Vedant Remedies|2025-04-11|2027-03-31|GENUINE
+Clopidogrel|CLP-2506-R19|Helio Healthcare Ltd|2025-06-23|2027-12-31|GENUINE
+Omeprazole|OMP-2505-S24|Medora Laboratories|2025-05-30|2027-11-30|GENUINE
+Pantoprazole|PAN-2507-T06|Kalpa Life Sciences|2025-07-02|2027-12-31|GENUINE
+Cetirizine|CTZ-2508-U13|Zenith BioCare|2025-08-19|2028-01-31|GENUINE
+Cetirizine|CTZ-2406-U01|Zenith BioCare|2024-06-10|2026-05-31|GENUINE
+Salbutamol|SAL-2509-V29|Norfield Pharmaceuticals|2025-09-25|2027-08-31|GENUINE
+Montelukast|MNT-2510-W10|Sunrise Pharma Pvt Ltd|2025-10-14|2028-03-31|GENUINE
+Diclofenac|DCL-2511-X02|Medora Laboratories|2025-11-04|2027-10-31|GENUINE
+Sertraline|SER-2512-Y15|Helio Healthcare Ltd|2025-12-09|2028-11-30|GENUINE
+Tramadol|TRM-2601-Z07|Vedant Remedies|2026-01-13|2028-12-31|GENUINE
+Levothyroxine|LEV-2602-A31|Kalpa Life Sciences|2026-02-16|2028-01-31|GENUINE
+Prednisolone|PRD-2603-B20|Zenith BioCare|2026-03-12|2028-02-29|GENUINE
+Furosemide|FUR-2604-C05|Norfield Pharmaceuticals|2026-04-07|2028-03-31|GENUINE

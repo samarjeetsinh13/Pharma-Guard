@@ -1,0 +1,42 @@
+# =====================================================================
+# PHARMA GUARD - MEDICINE TABLE  (hand-built demo database)
+# =====================================================================
+# Format (one medicine per line, columns separated by the | character):
+#   id | name | generic name | drug class | typical use | aliases (comma separated)
+#
+# Rules for editing this file by hand:
+#   * Lines starting with # and blank lines are ignored.
+#   * "id" must be unique (M001, M002, ...). "name" must be unique.
+#   * Aliases are alternative names / brand names the user may type.
+#     Brand names below are only examples for the demo.
+#   * Other data files refer to a medicine by its NAME, so if you rename a
+#     medicine here, update the same name in the other files too.
+#
+# EDUCATIONAL DEMO DATA ONLY - NOT MEDICAL ADVICE.
+# =====================================================================
+M001|Paracetamol|Acetaminophen|Analgesic / Antipyretic|Mild pain and fever|Crocin, Dolo 650, Tylenol
+M002|Ibuprofen|Ibuprofen|NSAID|Pain, inflammation and fever|Brufen, Advil
+M003|Aspirin|Acetylsalicylic acid|NSAID / Antiplatelet|Pain, fever and clot prevention|Disprin, Ecosprin, ASA
+M004|Amoxicillin|Amoxicillin|Penicillin antibiotic|Bacterial infections|Mox, Amoxil
+M005|Azithromycin|Azithromycin|Macrolide antibiotic|Bacterial respiratory and skin infections|Azithral, Zithromax
+M006|Ciprofloxacin|Ciprofloxacin|Fluoroquinolone antibiotic|Urinary and other bacterial infections|Cipro, Ciplox
+M007|Metformin|Metformin hydrochloride|Biguanide antidiabetic|Type 2 diabetes|Glycomet, Glucophage
+M008|Glimepiride|Glimepiride|Sulfonylurea antidiabetic|Type 2 diabetes|Amaryl
+M009|Amlodipine|Amlodipine besylate|Calcium channel blocker|High blood pressure|Norvasc, Amlokind
+M010|Atenolol|Atenolol|Beta blocker|High blood pressure, angina, heart rate control|Tenormin
+M011|Losartan|Losartan potassium|Angiotensin receptor blocker|High blood pressure, kidney protection in diabetes|Cozaar
+M012|Enalapril|Enalapril maleate|ACE inhibitor|High blood pressure and heart failure|Envas, Vasotec
+M013|Atorvastatin|Atorvastatin calcium|Statin|High cholesterol|Lipitor, Atorva
+M014|Warfarin|Warfarin sodium|Anticoagulant|Blood clot prevention|Coumadin
+M015|Clopidogrel|Clopidogrel bisulfate|Antiplatelet|Prevention of heart attack and stroke|Plavix, Clopilet
+M016|Omeprazole|Omeprazole|Proton pump inhibitor|Acid reflux and stomach ulcers|Omez, Prilosec
+M017|Pantoprazole|Pantoprazole sodium|Proton pump inhibitor|Acid reflux and stomach ulcers|Pan 40, Protonix
+M018|Cetirizine|Cetirizine hydrochloride|Antihistamine|Allergy symptoms|Cetzine, Zyrtec
+M019|Salbutamol|Salbutamol sulfate|Bronchodilator|Quick relief in asthma|Asthalin, Albuterol, Ventolin
+M020|Montelukast|Montelukast sodium|Leukotriene receptor antagonist|Asthma and allergic rhinitis|Singulair, Montair
+M021|Diclofenac|Diclofenac sodium|NSAID|Pain and inflammation|Voveran, Voltaren
+M022|Sertraline|Sertraline hydrochloride|SSRI antidepressant|Depression and anxiety disorders|Zoloft
+M023|Tramadol|Tramadol hydrochloride|Opioid analgesic|Moderate to severe pain|Ultram
+M024|Levothyroxine|Levothyroxine sodium|Thyroid hormone|Hypothyroidism|Thyronorm, Eltroxin
+M025|Prednisolone|Prednisolone|Corticosteroid|Inflammation, allergy and asthma flare-ups|Wysolone
+M026|Furosemide|Furosemide|Loop diuretic|Fluid retention (edema) and heart failure|Lasix

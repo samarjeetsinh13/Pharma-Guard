@@ -1,0 +1,134 @@
+# =====================================================================
+# PHARMA GUARD - SUITABILITY RULES  (hand-built demo database)
+# =====================================================================
+# Format (one rule per line, columns separated by the | character):
+#   illness name | medicine name | verdict | reason
+#
+# verdict must be exactly one of:
+#   SUITABLE      - commonly used for this illness
+#   CAUTION       - may be used, but needs care / a doctor's judgement
+#   NOT_SUITABLE  - does not treat this illness or can make it worse
+#
+# If an illness + medicine pair is NOT listed here, the program reports
+# UNKNOWN ("no rule in the demo knowledge base") - it never guesses.
+#
+# Illness and medicine names must exist in illnesses.txt / medicines.txt.
+# EDUCATIONAL DEMO DATA ONLY - NOT MEDICAL ADVICE.
+# =====================================================================
+
+# ---- I001 Fever ----
+Fever|Paracetamol|SUITABLE|First-choice fever reducer for most adults and children (dose by weight/age).
+Fever|Ibuprofen|SUITABLE|Reduces fever and body ache; take with food.
+Fever|Aspirin|CAUTION|Avoid in children and teenagers (risk of Reye's syndrome); adults only with care.
+Fever|Amoxicillin|NOT_SUITABLE|An antibiotic does not treat fever itself; only useful if a bacterial infection is confirmed.
+Fever|Metformin|NOT_SUITABLE|Antidiabetic medicine with no effect on fever.
+Fever|Atorvastatin|NOT_SUITABLE|Cholesterol medicine with no effect on fever.
+
+# ---- I002 Headache ----
+Headache|Paracetamol|SUITABLE|Common first-line pain reliever for tension-type headache.
+Headache|Ibuprofen|SUITABLE|Effective for mild to moderate headache; take with food.
+Headache|Aspirin|SUITABLE|Effective for occasional headache in adults.
+Headache|Diclofenac|CAUTION|Stronger NSAID with stomach and heart risks; keep for cases a doctor advises.
+Headache|Tramadol|NOT_SUITABLE|Opioids are not advised for routine headache (dependence and rebound-headache risk).
+Headache|Amoxicillin|NOT_SUITABLE|Antibiotic; does not treat headache.
+
+# ---- I003 Common Cold ----
+Common Cold|Paracetamol|SUITABLE|Relieves fever and aches that come with a cold.
+Common Cold|Cetirizine|SUITABLE|Reduces sneezing and runny nose.
+Common Cold|Ibuprofen|SUITABLE|Relieves aches and fever; take with food.
+Common Cold|Amoxicillin|NOT_SUITABLE|Colds are viral; antibiotics do not help.
+Common Cold|Azithromycin|NOT_SUITABLE|Colds are viral; antibiotics do not help.
+Common Cold|Prednisolone|NOT_SUITABLE|Steroids are not needed for an ordinary cold.
+
+# ---- I004 Bacterial Throat Infection ----
+Bacterial Throat Infection|Amoxicillin|SUITABLE|Usual first-choice antibiotic when there is no penicillin allergy.
+Bacterial Throat Infection|Azithromycin|SUITABLE|Alternative antibiotic, e.g. when penicillin allergy is present.
+Bacterial Throat Infection|Paracetamol|SUITABLE|Relieves throat pain and fever alongside the antibiotic.
+Bacterial Throat Infection|Ciprofloxacin|CAUTION|Not a first-line choice for throat infection; reserved for special situations.
+Bacterial Throat Infection|Cetirizine|NOT_SUITABLE|Antihistamine; does not treat a bacterial infection.
+Bacterial Throat Infection|Metformin|NOT_SUITABLE|Antidiabetic medicine; unrelated to infection.
+
+# ---- I005 Urinary Tract Infection ----
+Urinary Tract Infection|Ciprofloxacin|SUITABLE|Commonly used antibiotic for UTI; follow urine-culture and local guidance.
+Urinary Tract Infection|Amoxicillin|CAUTION|Resistance is common; use only if the lab report shows it will work.
+Urinary Tract Infection|Azithromycin|NOT_SUITABLE|Does not reach useful levels in urine, so it is a poor choice for UTI.
+Urinary Tract Infection|Paracetamol|SUITABLE|Relieves pain and fever while the antibiotic works.
+Urinary Tract Infection|Ibuprofen|CAUTION|Can strain the kidneys; avoid if kidney problems or dehydration.
+
+# ---- I006 Type 2 Diabetes ----
+Type 2 Diabetes|Metformin|SUITABLE|First-line medicine to lower blood sugar.
+Type 2 Diabetes|Glimepiride|SUITABLE|Lowers blood sugar; watch for low-sugar (hypoglycemia) episodes.
+Type 2 Diabetes|Losartan|SUITABLE|Protects the kidneys in diabetes with high blood pressure.
+Type 2 Diabetes|Atorvastatin|SUITABLE|Supportive: lowers heart-disease risk, which is higher in diabetes.
+Type 2 Diabetes|Prednisolone|CAUTION|Steroids raise blood sugar and can undo diabetes control.
+Type 2 Diabetes|Ibuprofen|CAUTION|NSAIDs can harm the kidneys, which are already at risk in diabetes.
+
+# ---- I007 Hypertension ----
+Hypertension|Amlodipine|SUITABLE|Widely used once-daily blood pressure medicine.
+Hypertension|Losartan|SUITABLE|Lowers blood pressure and protects kidneys.
+Hypertension|Enalapril|SUITABLE|ACE inhibitor used for blood pressure; may cause a dry cough.
+Hypertension|Atenolol|SUITABLE|Beta blocker that lowers blood pressure and heart rate.
+Hypertension|Furosemide|CAUTION|Water tablet; used in selected patients, other classes are usually tried first.
+Hypertension|Ibuprofen|NOT_SUITABLE|NSAIDs can raise blood pressure and weaken blood pressure tablets.
+Hypertension|Diclofenac|NOT_SUITABLE|NSAIDs can raise blood pressure and weaken blood pressure tablets.
+
+# ---- I008 High Cholesterol ----
+High Cholesterol|Atorvastatin|SUITABLE|Statin; first-line treatment to lower cholesterol.
+High Cholesterol|Aspirin|NOT_SUITABLE|Does not lower cholesterol.
+High Cholesterol|Metformin|NOT_SUITABLE|Antidiabetic medicine; not a cholesterol treatment.
+
+# ---- I009 Coronary Artery Disease ----
+Coronary Artery Disease|Aspirin|SUITABLE|Low-dose aspirin is widely used to prevent clots in the heart arteries.
+Coronary Artery Disease|Clopidogrel|SUITABLE|Antiplatelet used alone or with aspirin after stents or heart attack.
+Coronary Artery Disease|Atorvastatin|SUITABLE|Lowers cholesterol and stabilises artery plaques.
+Coronary Artery Disease|Atenolol|SUITABLE|Reduces heart workload and controls angina.
+Coronary Artery Disease|Ibuprofen|NOT_SUITABLE|NSAIDs can raise the risk of heart attack and interfere with aspirin.
+Coronary Artery Disease|Diclofenac|NOT_SUITABLE|NSAIDs can raise the risk of heart attack.
+
+# ---- I010 Atrial Fibrillation ----
+Atrial Fibrillation|Warfarin|SUITABLE|Blood thinner that prevents stroke; needs regular INR blood tests.
+Atrial Fibrillation|Atenolol|SUITABLE|Controls the heart rate.
+Atrial Fibrillation|Aspirin|CAUTION|Much less effective than anticoagulants for stroke prevention in AF.
+Atrial Fibrillation|Clopidogrel|CAUTION|Not a first-line choice for stroke prevention in AF.
+Atrial Fibrillation|Ibuprofen|NOT_SUITABLE|Raises bleeding risk, especially together with a blood thinner.
+
+# ---- I011 Asthma ----
+Asthma|Salbutamol|SUITABLE|Quick-relief inhaler for wheeze and breathlessness.
+Asthma|Montelukast|SUITABLE|Add-on controller medicine to reduce attacks.
+Asthma|Prednisolone|SUITABLE|Short courses are used to treat acute asthma flare-ups.
+Asthma|Atenolol|NOT_SUITABLE|Beta blockers can trigger airway narrowing in asthma.
+Asthma|Aspirin|CAUTION|Can trigger an attack in aspirin-sensitive asthma.
+Asthma|Ibuprofen|CAUTION|Can trigger an attack in NSAID-sensitive asthma.
+
+# ---- I012 Acid Reflux ----
+Acid Reflux|Omeprazole|SUITABLE|Reduces stomach acid; first-line for reflux and ulcers.
+Acid Reflux|Pantoprazole|SUITABLE|Reduces stomach acid; first-line for reflux and ulcers.
+Acid Reflux|Ibuprofen|NOT_SUITABLE|NSAIDs irritate the stomach lining and worsen reflux and ulcers.
+Acid Reflux|Aspirin|NOT_SUITABLE|Irritates the stomach lining and worsens reflux and ulcers.
+Acid Reflux|Diclofenac|NOT_SUITABLE|NSAIDs irritate the stomach lining and worsen reflux and ulcers.
+Acid Reflux|Prednisolone|CAUTION|Steroids can irritate the stomach, especially with NSAIDs.
+
+# ---- I013 Allergic Rhinitis ----
+Allergic Rhinitis|Cetirizine|SUITABLE|Antihistamine that relieves sneezing, itching and runny nose.
+Allergic Rhinitis|Montelukast|SUITABLE|Can be added when antihistamines are not enough.
+Allergic Rhinitis|Prednisolone|CAUTION|Short courses only for severe symptoms because of steroid side effects.
+Allergic Rhinitis|Amoxicillin|NOT_SUITABLE|Antibiotic; allergy is not an infection.
+
+# ---- I014 Hypothyroidism ----
+Hypothyroidism|Levothyroxine|SUITABLE|Replaces the missing thyroid hormone; taken on an empty stomach.
+Hypothyroidism|Metformin|NOT_SUITABLE|Antidiabetic medicine; does not treat low thyroid.
+Hypothyroidism|Prednisolone|NOT_SUITABLE|Steroid; does not treat low thyroid.
+
+# ---- I015 Osteoarthritis ----
+Osteoarthritis|Paracetamol|SUITABLE|First-line pain reliever for mild to moderate joint pain.
+Osteoarthritis|Ibuprofen|SUITABLE|Short-term use at the lowest dose, with food.
+Osteoarthritis|Diclofenac|SUITABLE|Effective for joint pain; use the lowest dose for the shortest time.
+Osteoarthritis|Tramadol|CAUTION|Only when safer options have failed (dependence and drowsiness risk).
+Osteoarthritis|Aspirin|CAUTION|Higher stomach-bleeding risk than other options at pain-relief doses.
+Osteoarthritis|Prednisolone|CAUTION|Long-term steroid use has serious side effects.
+
+# ---- I016 Depression ----
+Depression|Sertraline|SUITABLE|Commonly prescribed SSRI antidepressant.
+Depression|Tramadol|NOT_SUITABLE|Not an antidepressant, and it can interact dangerously with antidepressants.
+Depression|Paracetamol|NOT_SUITABLE|Pain reliever; does not treat depression.
+Depression|Prednisolone|CAUTION|Steroids can affect mood.

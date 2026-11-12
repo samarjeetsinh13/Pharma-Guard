@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Pharma Guard",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"cd /d C:\\Users\\samar\\Downloads\\pharma-guard\\pharma-guard && set PATH=C:\\msys64\\ucrt64\\bin;%PATH%&& call start.bat"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Start Pharma Guard Backend",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"cd /d C:\\Users\\samar\\Downloads\\pharma-guard\\pharma-guard && set PATH=C:\\msys64\\ucrt64\\bin;%PATH%&& backend\\build\\pharma_guard.exe"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
