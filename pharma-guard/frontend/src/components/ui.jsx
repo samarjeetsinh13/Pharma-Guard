@@ -82,10 +82,6 @@ export function Banner({ tone = 'slate', title, children }) {
   )
 }
 
-export function Disclaimer({ children }) {
-  return <p className="mt-4 text-xs italic text-slate-500">{children}</p>
-}
-
 export function ExampleButtons({ examples, onPick }) {
   return (
     <div className="flex flex-wrap items-center gap-2">

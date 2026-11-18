@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { api } from '../api.js'
 import TagInput from '../components/TagInput.jsx'
-import { Badge, Banner, Card, Disclaimer, ErrorBox, ExampleButtons, Spinner, bannerTone } from '../components/ui.jsx'
+import { Badge, Banner, Card, ErrorBox, ExampleButtons, Spinner, bannerTone } from '../components/ui.jsx'
 
 const EXAMPLES = [
   { label: 'Fever + 3 medicines', illness: 'Fever', medicines: ['Paracetamol', 'Aspirin', 'Amoxicillin'] },
@@ -127,7 +127,6 @@ export default function SuitabilityPanel({ illnessNames, medicineNames }) {
               ))}
             </ul>
           )}
-          <Disclaimer>{result.disclaimer}</Disclaimer>
         </Card>
       )}
     </div>

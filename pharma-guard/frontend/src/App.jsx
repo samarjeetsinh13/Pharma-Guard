@@ -65,6 +65,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-xl font-bold leading-tight text-slate-900">Pharma Guard</h1>
+              <p className="text-xs italic text-slate-500">&ldquo;Care begins with thoughtful choices.&rdquo;</p>
             </div>
           </div>
           <div className="ml-auto flex items-center gap-2 text-xs font-medium">
@@ -121,7 +122,7 @@ export default function App() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-4 pb-8 text-center text-xs text-slate-400">
-        Pharma Guard
+        Pharma Guard - Demo data only; not for medical decisions.
       </footer>
     </div>
   )

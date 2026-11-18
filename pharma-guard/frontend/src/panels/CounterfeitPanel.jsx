@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { api } from '../api.js'
-import { Badge, Banner, Card, Disclaimer, ErrorBox, ExampleButtons, Spinner, bannerTone } from '../components/ui.jsx'
+import { Badge, Banner, Card, ErrorBox, ExampleButtons, Spinner, bannerTone } from '../components/ui.jsx'
 
 const EXAMPLES = [
   { label: 'Genuine batch', medicine: 'Paracetamol', batch: 'PCM-2501-A12', manufacturer: 'Sunrise Pharma Pvt Ltd' },
@@ -156,7 +156,6 @@ export default function CounterfeitPanel({ medicineNames }) {
               ))}
             </ul>
           )}
-          <Disclaimer>{result.disclaimer}</Disclaimer>
         </Card>
       )}
     </div>

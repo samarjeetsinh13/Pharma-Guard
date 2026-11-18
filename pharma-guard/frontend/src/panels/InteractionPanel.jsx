@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { api } from '../api.js'
 import TagInput from '../components/TagInput.jsx'
-import { Badge, Banner, Card, Disclaimer, ErrorBox, ExampleButtons, Spinner, bannerTone } from '../components/ui.jsx'
+import { Badge, Banner, Card, ErrorBox, ExampleButtons, Spinner, bannerTone } from '../components/ui.jsx'
 
 const EXAMPLES = [
   { label: 'Blood thinner mix', medicines: ['Warfarin', 'Aspirin', 'Paracetamol'] },
@@ -31,13 +31,11 @@ export default function InteractionPanel({ medicineNames }) {
     }
   }
 
-  const t = result?.thread
-
   return (
     <div className="space-y-5">
       <Card
         title="Medicine Interaction"
-        subtitle="Add two or more medicines. The backend checks every pair on separate C++ worker threads that share one mutex-protected result list."
+        subtitle="Add two or more medicines. The backend checks each pair for known interactions."
       >
         <form onSubmit={submit} className="space-y-4">
           <TagInput
@@ -63,7 +61,7 @@ export default function InteractionPanel({ medicineNames }) {
         </form>
       </Card>
 
-      {busy && <Spinner text="Worker threads are checking the pairs..." />}
+      {busy && <Spinner text="Checking medicine pairs..." />}
       <ErrorBox message={error} />
 
       {result && (
@@ -82,7 +80,6 @@ export default function InteractionPanel({ medicineNames }) {
                         {it.medicineA} + {it.medicineB}
                       </span>
                       <Badge value={it.severity} />
-                      {it.foundBy && <span className="ml-auto font-mono text-xs text-slate-400">found by {it.foundBy}</span>}
                     </div>
                     <p className="mt-2 text-sm text-slate-700">{it.effect}</p>
                     <p className="mt-1 text-sm text-slate-500">
@@ -108,32 +105,7 @@ export default function InteractionPanel({ medicineNames }) {
                 ))}
               </ul>
             )}
-            <Disclaimer>{result.disclaimer}</Disclaimer>
           </Card>
-
-          {t && (
-            <Card
-              title="Thread activity (synchronization demo)"
-              subtitle="Each worker moves NEW → RUNNABLE → RUNNING → TERMINATED while main waits in join()."
-            >
-              <dl className="grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
-                {[
-                  ['Worker threads', t.workers],
-                  ['Pairs checked', t.pairsChecked],
-                  ['Mutex locks', t.mutexLocks],
-                  ['Elapsed', `${t.elapsedMs} ms`],
-                ].map(([label, value]) => (
-                  <div key={label} className="rounded-xl bg-slate-50 px-3 py-3">
-                    <dt className="text-xs uppercase tracking-wide text-slate-500">{label}</dt>
-                    <dd className="mt-1 text-xl font-semibold text-slate-900">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <pre className="mt-4 max-h-72 overflow-auto rounded-xl bg-slate-900 p-4 font-mono text-xs leading-relaxed text-emerald-300">
-                {t.trace.join('\n')}
-              </pre>
-            </Card>
-          )}
         </>
       )}
     </div>
