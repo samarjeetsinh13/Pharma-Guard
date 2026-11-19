@@ -122,7 +122,6 @@ export default function App() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-4 pb-8 text-center text-xs text-slate-400">
-        Pharma Guard - Demo data only; not for medical decisions.
       </footer>
     </div>
   )
